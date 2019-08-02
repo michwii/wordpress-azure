@@ -5,7 +5,7 @@ Voici comment mettre en place la solution from scratch :
 ## Installation manuelle depuis le portail
 
 Voici la liste des étapes que nous allons réaliser : 
-1. Déploiement de la stack officielle WordPress Windows
+1. [Déploiement de la stack officielle WordPress Windows](https://kpmgfr.visualstudio.com/0%20-%20Bureau%20Etudes/_wiki/wikis/WordPress?pagePath=%2Freadme%2FSetup%2FD%C3%A9ploiement%20de%20la%20stack%20officielle%20WordPress&pageId=414&wikiVersion=GBmaster)
 2. Configurer l'outil en tant qu'admin 
 3. Activer le multisite
 4. Activer l'ip filtering vers Front Door
