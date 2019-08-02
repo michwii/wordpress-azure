@@ -1,8 +1,11 @@
 # Déploiement de la stack officielle WordPress 
 
+[[_TOC_]]
+
+
 Toutes les ressources qui seront créées dans les étapes qui vont suivre devront être créées dans le datacenter **France Central**
 
-Liste des étapes : 
+## Déploiement de l'infrastructure 
 1. Créer un resource group respectant les conventions de nommage KPMG 
 <br/> Ce resource group devra contenir uniquement les ressources nécessaires pour le wordpress.
 2. Créer dans ce resource group une instance de WordPress présent dans le marketPlace
@@ -16,3 +19,9 @@ Bien selectionner la version Windows et non pas Linux. Prendre la version offici
 - [ ] **AppInsight** : Dédié / Collection level en mode recommandé
 
 ![image.png](/.attachments/image-a673839a-9ad2-4638-ad52-5c2878a49a70.png)
+
+## Faire la première configuration
+Une fois l'infrastructure déployée, il faut lancer la première configuration.
+![image.png](/.attachments/image-b8afccd7-d5cb-4fb7-bd96-eeea835c235a.png)
+Choisissez comme langue le Français et choisissez un login et un mot de passe d'administrateur.
+Pensez à bien les sauvegarder dans votre KeyVault.
