@@ -4,7 +4,7 @@ Voici les grandes étapes de configuration à réaliser
 [[_TOC_]]
 
 
-## Faire la première install
+## Faire la première configuration
 Une fois l'infrastructure déployée, il faut lancer la première configuration.
 ![image.png](/.attachments/image-b8afccd7-d5cb-4fb7-bd96-eeea835c235a.png)
 Choisissez comme langue le Français et choisissez un login et un mot de passe d'administrateur.
