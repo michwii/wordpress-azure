@@ -1,0 +1,79 @@
+# Activer le MultiSite
+
+Activer le multisite permte d'avoir pour la même instance WordPress plusieurs sites internets WordPress.
+
+[[_TOC_]]
+
+
+## Modifier le fichier wp-config.php
+Il faut rajouter la ligne suivante afin de pouvoir activer l'option multisite sur le fichier wp-config
+![image.png](/.attachments/image-371d9085-8235-45fb-9305-f942d12e8695.png)
+
+## Activer le network
+Retourner sur la page d'administration et aller dans la partie network : 
+![image.png](/.attachments/image-a27b3be9-7f51-4d63-bbe4-895e3ef4e23f.png)
+Choisissez bien sous-repertoire et valider.
+## Retoucher au fichier wp-config.php
+Comme conseillé par WordPress, mettre les lignes suivantes juste en dessous de la ligne rajoutée à l'étape 1.
+
+```
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+define('DOMAIN_CURRENT_SITE', 'poc-wordpress-kpmg.azurewebsites.net');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
+```
+
+
+## Modifier le fichier web.config
+<font color="red">Ne pas suivre les conseils de WordPress.</font><br/>
+Mettre plutôt dans le fichier web.config la configuration suivante : 
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <rule name="WordPress Rule 1 Identical" stopProcessing="true">
+                    <match url="^index\.php$" ignoreCase="false" />
+                    <action type="None" />
+                </rule>
+
+                <rule name="WordPress Rule 3 Identical" stopProcessing="true">
+                    <match url="^([_0-9a-zA-Z-]+/)?wp-admin$" ignoreCase="false" />
+                    <action type="Redirect" url="{R:1}wp-admin/" redirectType="Permanent" />
+                </rule>
+
+                <rule name="WordPress Rule 4 Identical" stopProcessing="true">
+                    <match url="^" ignoreCase="false" />
+                    <conditions logicalGrouping="MatchAny">
+                        <add input="{REQUEST_FILENAME}" matchType="IsFile" ignoreCase="false" />
+                        <add input="{REQUEST_FILENAME}" matchType="IsDirectory" ignoreCase="false" />
+                    </conditions>
+                    <action type="None" />
+                </rule>
+
+                <rule name="WordPress Rule 5 R2" stopProcessing="true">
+                    <match url="^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*)" ignoreCase="false" />
+                    <action type="Rewrite" url="{R:2}" />
+                </rule>
+
+                <rule name="WordPress Rule 6 Shorter" stopProcessing="true">
+                    <match url="^([_0-9a-zA-Z-]+/)?(.*\.php)$" ignoreCase="false" />
+                    <action type="Rewrite" url="{R:2}" />
+                </rule>
+
+
+                <rule name="WordPress Rule 7 Identical" stopProcessing="true">
+                    <match url="." ignoreCase="false" />
+                    <action type="Rewrite" url="index.php" />
+                </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>
+```
+
+
