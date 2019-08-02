@@ -14,4 +14,5 @@ Bien selectionner la version Windows et non pas Linux. Prendre la version offici
 - [ ] Pensez à bien sauvegarder l'username et le password de la base de données dans un coffre fort. 
 - [ ] Keyvault ici peut faire l'affaire.
 - [ ] **AppInsight** : Dédié / Collection level en mode recommandé
+
 ![image.png](/.attachments/image-a673839a-9ad2-4638-ad52-5c2878a49a70.png)
