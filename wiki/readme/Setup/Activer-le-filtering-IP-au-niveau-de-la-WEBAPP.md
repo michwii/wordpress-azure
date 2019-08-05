@@ -1,4 +1,4 @@
-# Activer le filtering IP au niveau de la WEBAPP
+# Activer le filtering IP au niveau de la WebApp
 
 Pour ne pas autoriser les utilisateurs à attaquer directement la WebApp mais à les forcer à passer par le WAF, il faut mettre en place du filtering ip entre la WebApp et Azure Front Door.
 
