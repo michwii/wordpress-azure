@@ -8,7 +8,9 @@ Pour cela il faut :
 2. Cliquer sur Configure Access Restriction
 3. Autoriser le range d'IP V4 suivant :
 ![image.png](/.attachments/image-a93dc310-af17-413a-ad1a-08eb46a63551.png)
+147.243.0.0/16
 4. Autoriser le range d'IP v6 suivant : 
 ![image.png](/.attachments/image-d06b0877-6362-4e88-883d-2f71ed34aed1.png) 
+2a01:111:2050::/44
 
 
