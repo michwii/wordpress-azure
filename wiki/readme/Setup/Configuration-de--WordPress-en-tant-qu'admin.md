@@ -19,5 +19,9 @@ Liste des étapes à effectuer :
 3. L'activer sur le réseau
 4. Supprimer les autres thèmes inutiles
 
+## Externaliser les contenus volumineux sur un Azure BlobStorage
+
+Liste des étapes à effectuer disponible dans [cette doc officielle](https://blogs.msdn.microsoft.com/azureossds/2017/06/21/migrate-wordpress-content-to-azure-blob-storage/)
+
 
 
