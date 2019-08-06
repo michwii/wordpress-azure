@@ -22,6 +22,8 @@ Liste des étapes à effectuer :
 ## Externaliser les contenus volumineux sur un Azure BlobStorage
 
 Liste des étapes à effectuer disponible dans [cette doc officielle](https://blogs.msdn.microsoft.com/azureossds/2017/06/21/migrate-wordpress-content-to-azure-blob-storage/)
-
+Pour vous aider : 
+Voici une commande réalisé avec AzCopy qui fonctionne (pensez quand même à changer le sas token et mettre le bon nom de votre blob storage) : <br/>
+`.\azcopy cp "./wp-content/uploads" "https://pocwordpresskpmg.blob.core.windows.net/storage-wordpress/?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-08-06T23:39:26Z&st=2019-08-06T15:39:26Z&spr=https&sig=RsskGW8aiyc1eExvA%2B%2FDkMoGlOYETC7JzV1Mu1uFW28%3D" --recursive=true`
 
 
