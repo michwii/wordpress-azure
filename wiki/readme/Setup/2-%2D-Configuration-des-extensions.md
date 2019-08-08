@@ -14,15 +14,14 @@ Attention c'est une clée d'API d'un serveur de test. Pensez à vérifier si une
 
 
 ## Externaliser les contenus volumineux sur un Azure BlobStorage
-
 Liste des étapes à effectuer disponible dans [cette doc officielle](https://blogs.msdn.microsoft.com/azureossds/2017/06/21/migrate-wordpress-content-to-azure-blob-storage/)
 Pour vous aider : 
 Voici une commande réalisé avec AzCopy qui fonctionne (pensez quand même à changer le sas token et mettre le bon nom de votre blob storage) : <br/>
 `.\azcopy cp "./wp-content/uploads" "https://pocwordpresskpmg.blob.core.windows.net/storage-wordpress/?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-08-06T23:39:26Z&st=2019-08-06T15:39:26Z&spr=https&sig=RsskGW8aiyc1eExvA%2B%2FDkMoGlOYETC7JzV1Mu1uFW28%3D" --recursive=true`
 
 ## Plugger Application Insight
-
-Télécharger cette extension (seulement si non déjà installée).
+Télécharger cette extension (seulement si non déjà installée):
+![image.png](/.attachments/image-21c3696f-8770-4bdf-94de-170666cb8bf3.png)
 Mettre dans la page de configuration de l'extension la clée **instrumentation key** de l'AppInsight
 ![image.png](/.attachments/image-00ba590b-613c-4f52-bbc1-5fc8a7fb792d.png)
 
