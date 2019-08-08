@@ -1,9 +1,9 @@
 1-%2D-Déploiement-de-la-stack-officielle-WordPress
 2-%2D-Configuration-des-extensions
 3-%2D-Action-d'administration
+4-%2D-Proteger-WordPress-avec-Azure-Front-Door
 Activer-un-read-replica-sur-la-base-MySQL
 Configurer-le-filtering-IP-Mysql
 Activer-le-MultiSite
 Récupérer-les-statistiques-de-visite-sur-PowerBI
 Activer-le-filtering-IP-au-niveau-de-la-WebApp
-4-%2D-Proteger-WordPress-avec-Azure-Front-Door
