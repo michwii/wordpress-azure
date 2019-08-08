@@ -26,3 +26,8 @@ Une pour faire le redirect de l'http vers l'https.
 ![image.png](/.attachments/image-ddfdc405-e796-46c1-8e54-a7f70bfcb883.png)
 L'autre classique permettant de protéger le site internet
 ![image.png](/.attachments/image-30f4ae09-013d-4ee0-94a7-109ac6d9d6c0.png)
+
+## Rajouter la gestion du certificat 
+Demander au NITSO si possiiblité de laisser FrontDoor gérer le certificat à notre place. Si oui, activer la gestion des certificats custom par front Door
+![image.png](/.attachments/image-8f9ea86d-7fff-4267-81dc-7c4b2fe10c27.png)
+Attention temps d'attente assez long.
