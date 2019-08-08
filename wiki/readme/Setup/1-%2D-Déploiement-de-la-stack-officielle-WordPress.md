@@ -20,6 +20,11 @@ Bien selectionner la version Windows et non pas Linux. Prendre la version offici
 
 ![image.png](/.attachments/image-a673839a-9ad2-4638-ad52-5c2878a49a70.png)
 
+## Faire pointer la WebApp vers un repo GIT KPMG
+
+![image.png](/.attachments/image-1bba4c52-6a0a-4571-b11b-6cdbe58751f8.png)
+Mettre comme répo celui dans lequel se trouve le wiki. 
+
 ## Faire la première configuration
 Une fois l'infrastructure déployée, il faut lancer la première configuration.
 ![image.png](/.attachments/image-b8afccd7-d5cb-4fb7-bd96-eeea835c235a.png)
