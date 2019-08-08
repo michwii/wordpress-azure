@@ -1,9 +1,9 @@
 1-%2D-Déploiement-de-la-stack-officielle-WordPress
+2-%2D-Configuration-des-extensions
 Ajouter-le-module-adminer-à-la-racine-de-la-webApp
 Activer-un-read-replica-sur-la-base-MySQL
 Configurer-le-filtering-IP-Mysql
 Activer-le-MultiSite
-2-%2D-Configuration-des-extensions
 Récupérer-les-statistiques-de-visite-sur-PowerBI
 Activer-le-filtering-IP-au-niveau-de-la-WebApp
 Rajouter-une-routing-rule-sur-le-Azure-Front-Door
