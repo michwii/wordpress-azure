@@ -1,0 +1,250 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "databaseName": {
+            "type": "String",
+            "defaultValue" : "mysqldatabase14556"
+        },
+        "administratorLogin": {
+            "type": "String",
+            "defaultValue" : "mysqldbuser"
+        },
+        "administratorLoginPassword": {
+            "type": "SecureString",
+            "defaultValue" : null
+        },
+        "mysqLocation": {
+            "type": "String",
+            "defaultValue" : "France Central"
+        },
+        "serverName": {
+            "type": "String",
+            "defaultValue" : "poc-wordpress-kpmg-mysqldbserver"
+        },
+        "skuCapacity": {
+            "type": "Int",
+            "defaultValue" : 8
+        },
+        "skuFamily": {
+            "type": "String",
+            "defaultValue" : "Gen5"
+        },
+        "skuName": {
+            "type": "String",
+            "defaultValue" : "GP_Gen5_8"
+        },
+        "skuSizeMB": {
+            "type": "Int",
+            "defaultValue" : 1132544
+        },
+        "storageMB": {
+            "type": "Int",
+            "defaultValue" : 1132544
+        },
+        "backupRetentionDays": {
+            "type": "Int",
+            "defaultValue" : 35
+        },
+        "geoRedundantBackup": {
+            "type": "String",
+            "defaultValue" : "Enabled"
+        },
+
+
+        "skuTier": {
+            "type": "String",
+            "defaultValue" : "GeneralPurpose"
+        },
+        "version": {
+            "type": "String",
+            "defaultValue" : "8.0"
+        },
+        "charset": {
+            "type": "String",
+            "defaultValue" : "utf8"
+        },
+        "collation": {
+            "type": "String",
+            "defaultValue" : "utf8_general_ci"
+        },
+        "name": {
+            "type": "String",
+            "defaultValue" : "poc-wordpress-kpmg-wp"
+        },
+        "hostingPlanName": {
+            "type": "String",
+            "defaultValue" : "poc-wordpress-kpmg-sp"
+        },
+        "hostingEnvironment": {
+            "type": "String",
+            "defaultValue": ""
+        },
+        "location": {
+            "type": "String",
+            "defaultValue" : "France Central"
+        },
+        "sku": {
+            "type": "String",
+            "defaultValue" : "Standard"
+        },
+        "skuCode": {
+            "type": "String",
+            "defaultValue" : "S2"
+        },
+        "workerSize": {
+            "type": "String",
+            "defaultValue" : "1"
+        },
+        "serverFarmResourceGroup": {
+            "type": "String",
+            "defaultValue" : "fritsdevlab"
+        },
+        "subscriptionId": {
+          "type": "String",
+          "defaultValue": "5bc55066-5ab2-4741-99fb-77e41368356b"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2016-03-01",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
+                "microsoft.insights/components/poc-wordpress-kpmg"
+            ],
+            "properties": {
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "PHPMYADMIN_EXTENSION_VERSION",
+                            "value": "latest"
+                        },
+                        {
+                            "name": "WEBSITE_DYNAMIC_CACHE",
+                            "value": "0"
+                        },
+                        {
+                            "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                            "value": "[reference('microsoft.insights/components/poc-wordpress-kpmg', '2015-05-01').InstrumentationKey]"
+                        },
+                        {
+                            "name": "XDT_MicrosoftApplicationInsights_Mode",
+                            "value": "default"
+                        },
+                        {
+                            "name": "ApplicationInsightsAgent_EXTENSION_VERSION",
+                            "value": "~2"
+                        }
+                    ],
+                    "phpVersion": "7.0",
+                    "connectionStrings": [
+                        {
+                            "name": "defaultConnection",
+                            "ConnectionString": "[concat('Database=', parameters('databaseName'), ';Data Source=', parameters('serverName') ,'.mysql.database.azure.com;User Id=',parameters('administratorLogin'),'@',parameters('serverName') ,';Password=',parameters('administratorLoginPassword'))]",
+                            "type": "MySQL"
+                        }
+                    ]
+                },
+                "name": "[parameters('name')]",
+                "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
+                "hostingEnvironment": "[parameters('hostingEnvironment')]"
+            },
+            "resources": [
+                {
+                    "type": "sourcecontrols",
+                    "apiVersion": "2016-03-01",
+                    "name": "web",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('name'))]"
+                    ],
+                    "properties": {
+                        "RepoUrl": "https://github.com/azureappserviceoss/wordpress-azure",
+                        "branch": "master",
+                        "IsManualIntegration": true
+                    }
+                }
+            ]
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2016-09-01",
+            "name": "[parameters('hostingPlanName')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "Tier": "[parameters('sku')]",
+                "Name": "[parameters('skuCode')]"
+            },
+            "properties": {
+                "name": "[parameters('hostingPlanName')]",
+                "workerSizeId": "[parameters('workerSize')]",
+                "numberOfWorkers": "1",
+                "hostingEnvironment": "[parameters('hostingEnvironment')]"
+            }
+        },
+        {
+            "type": "microsoft.insights/components",
+            "apiVersion": "2015-05-01",
+            "name": "poc-wordpress-kpmg",
+            "location": "francecentral",
+            "properties": {
+                "ApplicationId": "[parameters('name')]",
+                "Request_Source": "IbizaWebAppExtensionCreate"
+            }
+        },
+        {
+            "type": "Microsoft.DBforMySQL/servers",
+            "apiVersion": "2017-12-01-preview",
+            "name": "[parameters('serverName')]",
+            "location": "[parameters('mysqLocation')]",
+            "sku": {
+                "name": "[parameters('skuName')]",
+                "tier": "[parameters('skuTier')]",
+                "capacity": "[parameters('skuCapacity')]",
+                "size": "[parameters('skuSizeMB')]",
+                "family": "[parameters('skuFamily')]"
+            },
+            "properties": {
+                "version": "[parameters('version')]",
+                "administratorLogin": "[parameters('administratorLogin')]",
+                "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
+                "storageProfile": {
+                    "storageMB": "[parameters('skuSizeMB')]",
+                    "backupRetentionDays": "[parameters('backupRetentionDays')]",
+                    "geoRedundantBackup": "[parameters('geoRedundantBackup')]"
+                },
+                "sslEnforcement": "Disabled"
+            },
+            "resources": [
+                {
+                    "type": "firewallrules",
+                    "apiVersion": "2017-12-01-preview",
+                    "name": "AllowAll",
+                    "location": "[parameters('mysqLocation')]",
+                    "dependsOn": [
+                        "[concat('Microsoft.DBforMySQL/servers/', parameters('serverName'), '/databases/' , parameters('databaseName'))]",
+                        "[concat('Microsoft.DBforMySQL/servers/', parameters('serverName'))]"
+                    ],
+                    "properties": {
+                        "startIpAddress": "0.0.0.0",
+                        "endIpAddress": "255.255.255.255"
+                    }
+                },
+                {
+                    "type": "databases",
+                    "apiVersion": "2017-12-01-preview",
+                    "name": "[parameters('databaseName')]",
+                    "dependsOn": [
+                        "[concat('Microsoft.DBforMySQL/servers/', parameters('serverName'))]"
+                    ],
+                    "properties": {
+                        "charset": "[parameters('charset')]",
+                        "collation": "[parameters('collation')]"
+                    }
+                }
+            ]
+        }
+    ]
+}
