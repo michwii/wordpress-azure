@@ -20,7 +20,7 @@
 					<?php scaffolding_footer_nav(); ?>
 				</nav>
 
-				<p class="source-org copyright"><?php echo sprintf( __( '&copy; %1$s %2$s.', 'scaffolding' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
+				<p class="source-org copyright">© 2019 KPMG S.A., société anonyme d'expertise comptable et de commissariat aux comptes, membre français du réseau KPMG constitué de cabinets indépendants adhérents de KPMG International Cooperative, une entité de droit suisse. Tous droits réservés. Le nom KPMG et le logo sont des marques déposées ou des marques de KPMG International.<?php echo sprintf( __( '&copy; %1$s %2$s.', 'scaffolding' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
 
 			</div>
 
