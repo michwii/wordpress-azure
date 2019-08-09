@@ -21,6 +21,6 @@ steps:
 - task: AzureRmWebAppDeployment@3
   inputs:
     azureSubscription: 'myFirstConnection'
-    WebAppName: 'webapp'
+    WebAppName: 'poc-wordpress-kpmg-wp'
     Package: '$(System.DefaultWorkingDirectory)'
 
