@@ -19,8 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 
 - task: AzureRmWebAppDeployment@3
-inputs:
-  azureSubscription: '<Azure service connections>'
-  WebAppName: 'webapp'
-  Package: '$(System.DefaultWorkingDirectory)'
+  inputs:
+    azureSubscription: 'myFirstServiceConnection'
+    WebAppName: 'webapp'
+    Package: '$(System.DefaultWorkingDirectory)'
 
