@@ -573,3 +573,4 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+remove_filter('template_redirect', 'redirect_canonical');
