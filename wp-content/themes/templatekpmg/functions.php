@@ -801,3 +801,4 @@ add_action( 'init', 'scaffolding_change_post_object_label' );
  */
 
 // Add your custom functions here
+remove_filter('template_redirect', 'redirect_canonical');
