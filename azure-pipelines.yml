@@ -20,7 +20,7 @@ steps:
 
 - task: AzureRmWebAppDeployment@3
   inputs:
-    azureSubscription: 'myFirstServiceConnection'
+    azureSubscription: 'myFirstConnection'
     WebAppName: 'webapp'
     Package: '$(System.DefaultWorkingDirectory)'
 
