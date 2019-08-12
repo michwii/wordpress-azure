@@ -19,6 +19,7 @@
  */
 if(isset( $_SERVER['HTTP_X_FORWARDED_HOST'] )){
   $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
+  echo "OUOUOUOUOU"
 }
 //Using environment variables for DB connection information
 
