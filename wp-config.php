@@ -19,7 +19,6 @@
  */
 if(isset( $_SERVER['HTTP_X_FORWARDED_HOST'] )){
   $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
-  echo "OUOUOUOUOU"
 }
 //Using environment variables for DB connection information
 
@@ -122,10 +121,10 @@ define('BLOG_ID_CURRENT_SITE', 1);
 /* That's all, stop editing! Happy blogging. */
 
 //Relative URLs for swapping across app service deployment slots
-define('WP_HOME', 'http://'. filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
-define('WP_SITEURL', 'http://'. filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
+define('WP_HOME', 'https://'.$_SERVER['HTTP_HOST']);
+define('WP_SITEURL', 'https://'. $_SERVER['HTTP_HOST']);
 define('WP_CONTENT_URL', '/wp-content');
-define('DOMAIN_CURRENT_SITE', filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
+define('DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST']);
 
 
 /** Absolute path to the WordPress directory. */
