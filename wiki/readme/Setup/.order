@@ -1,9 +1,9 @@
-[optionnel]-Rajouter-un-utilisateur
 1-%2D-Déploiement-de-la-stack-officielle-WordPress
 2-%2D-Configuration-des-extensions
 3-%2D-Action-d'administration
 4-%2D-Proteger-WordPress-avec-Azure-Front-Door
 5-%2D-Activer-le-filtering-IP-au-niveau-de-la-WebApp
+[optionnel]-Rajouter-un-utilisateur
 [optionnel]-Ajouter-un-thème
 [optionnel]-Activer-un-read-replica-sur-la-base-MySQL
 [optionnel]-Configurer-le-filtering-IP-Mysql
