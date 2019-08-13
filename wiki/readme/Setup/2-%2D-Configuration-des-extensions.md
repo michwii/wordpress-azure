@@ -12,8 +12,7 @@ Voici les grandes étapes de configuration à réaliser :
 | 5 | Mettre dans la page de configuration de l'extension la clée **instrumentation key** de l'AppInsight (si ce n'est pas déjà fait). | ![image.png](/.attachments/image-00ba590b-613c-4f52-bbc1-5fc8a7fb792d.png) |
 |6|Télécharger (seulement si nécessaire) l'extension suivante.|![image.png](/.attachments/image-920e0c46-f025-49ce-a21c-cd45c870f482.png)|
 |  7 |  Ajouter sur le tenant de production Azure une application et garder bien son secret. (Vous pouvez le mettre dans le KeyVault du projet WordPress). Mettre en url autorisée, l'url de votre site WordPress protégée |   |
-|  8 |  Configurer l'extension en y mettant votre clientid et votre clientsecret et en pensant à bien mettre le tenant de prod | ![image.png](/.attachments/image-ddbe2d4a-dae1-4d53-aec2-529acca82204.png)
- |
+|  8 |  Configurer l'extension en y mettant votre clientid et votre clientsecret et en pensant à bien mettre le tenant de prod | ![image.png](/.attachments/image-ddbe2d4a-dae1-4d53-aec2-529acca82204.png)|
 | 9 |  Rajouter un widget permettant aux utilisateurs de se connecter avec leur compte KPMG. |   |
 
 
