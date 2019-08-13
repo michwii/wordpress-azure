@@ -21,8 +21,10 @@
 ## Option 2 : Via Google Analytics
 
 Liste des étapes à effectuer : 
-1. Créer un compte google Analytics et le configurer pour fonctionner avec l'url sécurisée.
-2. Installer le pluging 
-![image.png](/.attachments/image-01cf7e61-28bf-439c-9b6a-aedcd6aaf629.png)
-3. Le configurer en l'autorisant à se connecter au compte Google Analytics
-4. Connecter PowerBI au compte Google Analytics.
+
+|Etape| Description | Screenshot |
+|:--:|--|--|
+| 1 | Créer un compte google Analytics et le configurer pour fonctionner avec l'url sécurisée. | ![image.png](/.attachments/image-67dca59c-f94b-46ca-bd3d-8b6731fe5c46.png) |
+| 2 | Installer le pluging | ![image.png](/.attachments/image-01cf7e61-28bf-439c-9b6a-aedcd6aaf629.png) |
+| 3 | Le configurer en l'autorisant à se connecter au compte Google Analytics |  |
+| 4 | Connecter PowerBI au compte Google Analytics. | ![image.png](/.attachments/image-b4ec8de0-cfa3-4718-8223-f0b978f1b9ad.png) |
