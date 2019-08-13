@@ -14,9 +14,8 @@ Voici les grandes étapes de configuration à réaliser :
 |  7 |  Ajouter sur le tenant de production Azure une application et garder bien son secret. (Vous pouvez le mettre dans le KeyVault du projet WordPress). Mettre en url autorisée, l'url de votre site WordPress protégée |   |
 |  8 |  Configurer l'extension en y mettant votre clientid et votre clientsecret et en pensant à bien mettre le tenant de prod | ![image.png](/.attachments/image-ddbe2d4a-dae1-4d53-aec2-529acca82204.png)
  |
-| 9 |  Rajouter un  |   |
-|   |   |   |
-|   |   |   |
+| 9 |  Rajouter un widget permettant aux utilisateurs de se connecter avec leur compte KPMG. |   |
+
 
 
 
