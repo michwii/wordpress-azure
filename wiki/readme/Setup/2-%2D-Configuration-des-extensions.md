@@ -16,6 +16,21 @@ Voici les grandes étapes de configuration à réaliser :
 | 9 |  Rajouter un widget permettant aux utilisateurs de se connecter avec leur compte KPMG. |   |
 
 
+Configuration miniOrange de test
+| Clé | Valeur |
+|--|--|
+| Redirect / Callback URL | https://poc-frontdoor-kpmg.azurefd.net |
+| *Client ID: | ba88596f-85e9-4bec-b0c2-d603279fefeb |
+| *Client Secret: | ysX_u7[820I*ZKKer=uB5bU.tgXFaJr3 |
+| Scope: | openid |
+| *Authorize Endpoint: | https://login.microsoftonline.com/prekpmgnetfr.onmicrosoft.com/oauth2/authorize |
+| *Access Token Endpoint: | https://login.microsoftonline.com/prekpmgnetfr.onmicrosoft.com/oauth2/token |
+| *Get User Info Endpoint: | https://login.windows.net/prekpmgnetfr.onmicrosoft.com/openid/userinfo |
+| *Email attribute: | email |
+| *First Name Attribute: | name |
+
+
+
 
 
 
