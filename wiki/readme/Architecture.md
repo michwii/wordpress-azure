@@ -1,6 +1,6 @@
 # Architecture
 
-Voici l'architecture de la solution :
+Voici l'architecture de la solution (PROD) :
  
 
 ![image.png](/.attachments/image-53566284-3e1e-4bdc-93e6-ac263ba880cc.png)
@@ -18,3 +18,4 @@ Voici l'architecture de la solution :
 | MySQL | Base de données du WordPress. 1 WordPress = 1 base de données MYSQL| Non |
 | 1 Repo Azure DevOps | Contient le code Custom KPMG de notre instance WordPress |  Oui|
 
+Nous conseillons pour l'anteprod de mutualiser les service plan et les base de données afin de réduire les coûts.
