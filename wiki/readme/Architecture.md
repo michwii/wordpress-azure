@@ -14,8 +14,9 @@ Voici l'architecture de la solution (PROD) :
 | KeyVault | Stocker les crédentials importants d'administration de WordPress | Oui |
 | FrontDoor | Porte d'entrée de toutes les requêtes allant vers les WordPress. C'est un WAF. | Oui |
 | WAF Policy | Règles WAF du Front Door. Quels sont les requêtes que je dois bloquer et celles que je dois accepter | Oui |
-| WebAPP + Service Plan | Serveur Web contenant le code du WordPress. 1 WordPress = 1 Web APP = 1 service plan | Non |
-| MySQL | Base de données du WordPress. 1 WordPress = 1 base de données MYSQL| Non |
+| WebAPP  | Serveur Web contenant le code du WordPress. 1 WordPress = 1 Web APP | Non |
+| Service Plan | machine physique qui contiendra toutes les WebApps | Oui |
+| MySQL | Base de données du WordPress. 1 WordPress = 1 base de données MYSQL| Oui|
 | 1 Repo Azure DevOps | Contient le code Custom KPMG de notre instance WordPress |  Oui|
 
 Nous conseillons pour l'anteprod de mutualiser les service plan et les base de données afin de réduire les coûts.
