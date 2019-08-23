@@ -16,7 +16,9 @@ Voici l'architecture de la solution (PROD) :
 | WAF Policy | Règles WAF du Front Door. Quels sont les requêtes que je dois bloquer et celles que je dois accepter | Oui |
 | WebAPP  | Serveur Web contenant le code du WordPress. 1 WordPress = 1 Web APP | Non |
 | Service Plan | Machine physique qui contiendra toutes les WebApps | Oui |
-| MySQL | Base de données du WordPress. 1 WordPress = 1 base de données MYSQL| Oui|
+| MySQL | Base de données du WordPress. | Oui|
 | 1 Repo Azure DevOps | Contient le code Custom KPMG de notre instance WordPress |  Oui|
+|OMS | Recevra tous les logs venant du Front Door |  Oui|
+|Event Hub | Recevra tous les logs venant du Front Door |  Oui|
 
 Nous conseillons pour l'anteprod de mutualiser les service plan et les base de données afin de réduire les coûts.
