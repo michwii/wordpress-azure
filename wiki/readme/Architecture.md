@@ -3,7 +3,7 @@
 Voici l'architecture de la solution (PROD) :
  
 
-![image.png](/.attachments/image-53566284-3e1e-4bdc-93e6-ac263ba880cc.png)
+![image.png](/.attachments/image-731a5142-b5c4-4e4e-be38-a02eb8321feb.png)
 
 
 |Composant| Description | Mutualisé entre les instances WordPress|
