@@ -20,5 +20,3 @@ Voici l'architecture de la solution (PROD) :
 | 1 Repo Azure DevOps | Contient le code Custom KPMG de notre instance WordPress |  Oui|
 |OMS | Recevra tous les logs venant du Front Door |  Oui|
 |Event Hub | Recevra tous les logs venant du Front Door |  Oui|
-
-Nous conseillons pour l'anteprod de mutualiser les service plan et les base de données afin de réduire les coûts.
