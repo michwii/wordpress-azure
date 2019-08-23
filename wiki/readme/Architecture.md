@@ -15,7 +15,7 @@ Voici l'architecture de la solution (PROD) :
 | FrontDoor | Porte d'entrée de toutes les requêtes allant vers les WordPress. C'est un WAF. | Oui |
 | WAF Policy | Règles WAF du Front Door. Quels sont les requêtes que je dois bloquer et celles que je dois accepter | Oui |
 | WebAPP  | Serveur Web contenant le code du WordPress. 1 WordPress = 1 Web APP | Non |
-| Service Plan | machine physique qui contiendra toutes les WebApps | Oui |
+| Service Plan | Machine physique qui contiendra toutes les WebApps | Oui |
 | MySQL | Base de données du WordPress. 1 WordPress = 1 base de données MYSQL| Oui|
 | 1 Repo Azure DevOps | Contient le code Custom KPMG de notre instance WordPress |  Oui|
 
