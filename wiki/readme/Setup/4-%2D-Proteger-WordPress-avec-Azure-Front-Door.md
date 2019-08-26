@@ -1,5 +1,20 @@
 # Proteger WordPress avec Azure Front Door
 
+L'Azure Front Door va permettre de proteger correctement notre instance de WordPress.
+Pour fonctionner correctement le Front Door à Besoin de 3 paramètres : 
+1. L'url sur laquelle nous allons l'appeller.
+2. Les backends à qui il va transmettre les requêtes 
+3. Les règles permettant de choisir le bon backend a appeller.
+
+Lors de la première création d'un Azure Front Door, on ne peut pas encore choisir l'url sur laquelle on sera appellée.
+Par défaut, nous aurons une url ayant ce format : https://[urlkpmg].azurefd.net.
+C'est uniquement après l'instanciation de celui ci que l'on pourra rajouter une url custom. 
+
+Voilà pourquoi l'une des premières étapes consiste à simplement virtualiser un site publique comme Google. 
+La première virtualisation aura une url non désirée.
+Les suivantes pourront être controlées.
+Une fois créée, on peut supprimer notre backend Google.
+
 
 |Etape| Description | Screenshot |
 |--|--|--|
